@@ -1,0 +1,38 @@
+-- Vehicle(vehicle_id, year, make_id, year, model_id)
+
+Vehicle = {
+    vehicle_id: number, make_id: number , year: number, model_id: string
+    1,                  101,              2015,         '3xpw79'
+    2,                  102,              2001,         'ah982'
+    3,                  103,              2010,         '72j729'
+    4,                  104,              2015,         'osjd2'
+}
+
+-- Make(make_id, make_name, country)
+
+Make = {
+    make_id: number, make_name: string, country: string
+    101,              'Toyota',           'Japan'
+    102,              'Honda',            'Japan'
+    103,              'Ford',             'USA'
+    104,              'Chevrolet',        'USA'
+}
+
+group: bank example
+
+Vehicle = {
+    vehicle_id:number, make_id:number , year:number,model_id:string
+    1,                  101,              2015,         '3xpw79'
+    2,                  102,              2001,         'ah982'
+    3,                  103,              2010,         '72j729'
+    4,                  104,              2015,         'osjd2'
+}
+
+
+Make = {
+    make_id:number,make_name:string,country:string
+    101,              'Toyota',           'Japan'
+    102,              'Honda',            'Japan'
+    103,              'Ford',             'USA'
+    104,              'Chevrolet',        'USA'
+}
