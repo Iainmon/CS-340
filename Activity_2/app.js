@@ -9,8 +9,6 @@ PORT        = 2236;                 // Set a port number at the top so it's easy
 // Database
 var db = require('./db-connector');
 
-
-
 /*
     ROUTES
 */
