@@ -2,16 +2,16 @@
 
 -- Q1
 
-create or replace table customers (
-    customer_id int not null AUTO_INCREMENT,
-    customer_name varchar(50),
-    address_line1 varchar(50),
-    address_line2 varchar(50),
-    city varchar(50),
-    state varchar(50),
-    postal_code varchar(50),
-    ytd_purchases decimal(19,2),
-    PRIMARY KEY (customer_id)
+create or replace table Customers (
+    CustomerID int not null AUTO_INCREMENT,
+    CustomerName varchar(50),
+    AddressLine1 varchar(50),
+    AddressLine2 varchar(50),
+    City varchar(50),
+    State varchar(50),
+    PostalCode varchar(50),
+    YTDPurchases decimal(19,2),
+    PRIMARY KEY (CustomerID)
 );
 
 
@@ -20,18 +20,18 @@ create or replace table customers (
 
 show tables;
 
-describe customers;
+describe Customers;
 
 
 
 -- Q3
 
-insert into customers (
-    customer_name,
-    address_line1,
-    city,
-    state,
-    postal_code
+insert into Customers (
+    CustomerName,
+    AddressLine1,
+    City,
+    State,
+    PostalCode
 )
 values 
 (
@@ -66,16 +66,16 @@ values
 
 /*
 
-write a query to select all records from your customers table.
+write a query to select all records from your Customers table.
 
 write a query to select the id and name where postal code is 94536.
 
 */
 
 
-select * from customers;
+select * from Customers;
 
-select customer_id , customer_name from customers where postal_code = "94536";
+select CustomerID , CustomerName from Customers where PostalCode = "94536";
 
 
 
@@ -89,10 +89,10 @@ select customer_id , customer_name from customers where postal_code = "94536";
 
 -- Q1
 
-create or replace table terms_code (
-    terms_code_id varchar(50) not null,
-    description varchar(50),
-    PRIMARY KEY (terms_code_id)
+create or replace table TermsCode (
+    TermsCodeID varchar(50) not null,
+    Description varchar(50),
+    PRIMARY KEY (TermsCodeID)
 );
 
 
@@ -100,9 +100,9 @@ create or replace table terms_code (
 
 -- Q2
 
-insert into terms_code (
-    terms_code_id,
-    description
+insert into TermsCode (
+    TermsCodeID,
+    Description
 )
 values
 ( "NET30", "Payment due in 30 days." ),
@@ -112,15 +112,15 @@ values
 
 -- Q3
 
-create table invoices (
-    invoice_id int not null AUTO_INCREMENT,
-    customer_id int,
-    invoice_date datetime,
-    terms_code_id varchar(50),
-    total_due decimal(19,2),
-    PRIMARY KEY (invoice_id),
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
-    FOREIGN KEY (terms_code_id) REFERENCES terms_code(terms_code_id)
+create table Invoices (
+    InvoiceID int not null AUTO_INCREMENT,
+    CustomerID int,
+    InvoiceDate datetime,
+    TermsCodeID varchar(50),
+    TotalDue decimal(19,2),
+    PRIMARY KEY (InvoiceID),
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
+    FOREIGN KEY (TermsCodeID) REFERENCES TermsCode(TermsCodeID)
 );
 
 
@@ -128,11 +128,11 @@ create table invoices (
 -- Q4
 
 
-insert into invoices (
-    customer_id,
-    invoice_date,
-    total_due,
-    terms_code_id
+insert into Invoices (
+    CustomerID,
+    InvoiceDate,
+    TotalDue,
+    TermsCodeID
 )
 values
 (
