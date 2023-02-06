@@ -1,0 +1,54 @@
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+first_name	varchar(255)	NO	MUL	NULL	
+last_name	varchar(255)	NO		NULL	
+email	varchar(255)	NO		NULL	
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+first_name	varchar(255)	NO	MUL	NULL	
+last_name	varchar(255)	NO		NULL	
+start_date	date	NO		NULL	
+email	varchar(255)	NO		NULL	
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+title	varchar(255)	NO	UNI	NULL	
+comments	text	YES		NULL	
+cid	int(11)	YES	MUL	NULL	
+Field	Type	Null	Key	Default	Extra
+pid	int(11)	NO	PRI	NULL	
+eid	int(11)	NO	PRI	NULL	
+due_date	date	NO		NULL	
+TABLE_NAME	COLUMN_NAME	CONSTRAINT_NAME	REFERENCED_TABLE_NAME	REFERENCED_COLUMN_NAME
+project	cid	project_ibfk_1	client	id
+works_on	pid	works_on_ibfk_1	project	id
+works_on	eid	works_on_ibfk_2	employee	id
+
+
+
+----------------------------
+Your query file resulted in:
+----------------------------
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+first_name	varchar(255)	NO	MUL	NULL	
+last_name	varchar(255)	NO		NULL	
+email	varchar(255)	NO		NULL	
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+first_name	varchar(255)	NO	MUL	NULL	
+last_name	varchar(255)	NO		NULL	
+start_date	date	NO		NULL	
+email	varchar(255)	NO		NULL	
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+title	varchar(255)	NO	UNI	NULL	
+comments	text	YES		NULL	
+cid	int(11)	NO	MUL	NULL	
+Field	Type	Null	Key	Default	Extra
+pid	int(11)	NO	PRI	NULL	
+eid	int(11)	NO	PRI	NULL	
+due_date	date	NO		NULL	
+TABLE_NAME	COLUMN_NAME	CONSTRAINT_NAME	REFERENCED_TABLE_NAME	REFERENCED_COLUMN_NAME
+project	cid	project_ibfk_1	client	id
+works_on	pid	works_on_ibfk_1	project	id
+works_on	eid	works_on_ibfk_2	employee	id
